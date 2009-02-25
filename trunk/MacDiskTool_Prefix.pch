@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'MacDiskTool' target in the 'MacDiskTool' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
