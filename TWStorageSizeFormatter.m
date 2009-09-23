@@ -17,12 +17,12 @@
         return nil;
     }
 	
-	const unsigned long long tera = 1099511627776;
-	const unsigned long long giga = 1073741824;
-	const unsigned long long mega = 1048576;
-	const unsigned long long kilo = 1024;
+	const UInt64 tera = 1099511627776;
+	const UInt64 giga = 1073741824;
+	const UInt64 mega = 1048576;
+	const UInt64 kilo = 1024;
 	
-	unsigned long long size = [anObject unsignedLongLongValue];
+	UInt64 size = [anObject unsignedLongLongValue];
 	
 	if (size >= tera) {
 		return [NSString stringWithFormat:@"%llu TB", size / giga];

@@ -12,17 +12,17 @@
 @interface TWDevice : NSObject {
 	NSString *name;
 	NSString *devicePath;
-	NSNumber *blockSize;
-	NSNumber *size;
-	NSNumber *writable;
+	UInt64 blockSize;
+	UInt64 size;
+	BOOL writable;
 	NSImage *icon;
 }
 
 @property(copy) NSString *name;
 @property(copy) NSString *devicePath;
-@property(copy) NSNumber *blockSize;
-@property(copy) NSNumber *size;
-@property(copy) NSNumber *writable;
+@property UInt64 blockSize;
+@property UInt64 size;
+@property BOOL writable;
 @property(retain) NSImage *icon;
 
 @end
