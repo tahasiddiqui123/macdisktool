@@ -23,16 +23,23 @@
 #import "TWDevice.h"
 #import "TWStorageSizeFormatter.h"
 #import "RSVerticallyCenteredTextFieldCell.h"
+#import "TWSurfaceScanController.h"
 
 @implementation AppController
 
 @synthesize storageDevices;
+@synthesize selectedDevicesIndexes;
 
 - (id)init {
 	if (self = [super init]) {
 		self.storageDevices = [NSArray array];
 	}
 	return self;
+}
+
+- (void)dealloc {
+	self.storageDevices = nil;
+	[super dealloc];
 }
 
 - (void)awakeFromNib {
@@ -81,9 +88,9 @@
 			TWDevice *device = [[[TWDevice alloc] init] autorelease];
 			
 			device.devicePath = [NSString stringWithFormat:@"%sr%@", _PATH_DEV, [properties valueForKey:@"BSD Name"]];
-			device.blockSize = [properties valueForKey:@"Preferred Block Size"];
-			device.writable = [properties valueForKey:@"Writable"];
-			device.size = [properties valueForKey:@"Size"];
+			device.blockSize = [[properties valueForKey:@"Preferred Block Size"] unsignedLongLongValue];
+			device.writable = [[properties valueForKey:@"Writable"] boolValue];
+			device.size = [[properties valueForKey:@"Size"] unsignedLongLongValue];
 			
 			io_name_t name;
 			IORegistryEntryGetName(nextMedia, name);
@@ -122,5 +129,9 @@
 	return [NSBundle bundleWithPath:[dict valueForKey:identifier]];
 }
 
+- (IBAction)scan:(id)sender {
+	TWDevice *device = [self.storageDevices objectAtIndex:[self.selectedDevicesIndexes firstIndex]];
+	[TWSurfaceScanController scanDevice:device options:nil];
+}
 
 @end
