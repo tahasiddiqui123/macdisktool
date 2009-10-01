@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		44354DD90F560B7E0046D4C7 /* ScanWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44354DD80F560B7E0046D4C7 /* ScanWindow.xib */; };
+		442D58F2107542C800B05682 /* ScanWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 442D58F1107542C800B05682 /* ScanWindow.xib */; };
 		444B752C1056BA46003AB02B /* TWSurfaceScanOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 444B752B1056BA46003AB02B /* TWSurfaceScanOperation.m */; };
 		444B754B1056CD1D003AB02B /* TWReadOnlySurfaceScanOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 444B754A1056CD1D003AB02B /* TWReadOnlySurfaceScanOperation.m */; };
 		44A038EF0F6E9EF400974860 /* SecurityFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44A038EE0F6E9EF400974860 /* SecurityFoundation.framework */; };
+		44D5A333106AB9760062CB5B /* TWBlockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D5A332106AB9760062CB5B /* TWBlockView.m */; };
 		44E5AAE910583BD00035C0C7 /* TWSurfaceScanController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44E5AAE810583BD00035C0C7 /* TWSurfaceScanController.m */; };
 		44E7CC760F54838700916711 /* RSVerticallyCenteredTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44E7CC6E0F54838700916711 /* RSVerticallyCenteredTextFieldCell.m */; };
 		44E7CC770F54838700916711 /* TWDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 44E7CC710F54838700916711 /* TWDevice.m */; };
@@ -33,12 +34,14 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* MacDiskTool_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacDiskTool_Prefix.pch; sourceTree = "<group>"; };
 		44352A55106253CE00EA346F /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = /System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<absolute>"; };
-		44354DD80F560B7E0046D4C7 /* ScanWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanWindow.xib; sourceTree = "<group>"; };
+		44354DD80F560B7E0046D4C7 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/ScanWindow.xib; sourceTree = "<group>"; };
 		444B752A1056BA46003AB02B /* TWSurfaceScanOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWSurfaceScanOperation.h; sourceTree = "<group>"; };
 		444B752B1056BA46003AB02B /* TWSurfaceScanOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWSurfaceScanOperation.m; sourceTree = "<group>"; };
 		444B75491056CD1D003AB02B /* TWReadOnlySurfaceScanOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWReadOnlySurfaceScanOperation.h; sourceTree = "<group>"; };
 		444B754A1056CD1D003AB02B /* TWReadOnlySurfaceScanOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWReadOnlySurfaceScanOperation.m; sourceTree = "<group>"; };
 		44A038EE0F6E9EF400974860 /* SecurityFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SecurityFoundation.framework; path = /System/Library/Frameworks/SecurityFoundation.framework; sourceTree = "<absolute>"; };
+		44D5A331106AB9760062CB5B /* TWBlockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWBlockView.h; sourceTree = "<group>"; };
+		44D5A332106AB9760062CB5B /* TWBlockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWBlockView.m; sourceTree = "<group>"; };
 		44E5AAE710583BD00035C0C7 /* TWSurfaceScanController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWSurfaceScanController.h; sourceTree = "<group>"; };
 		44E5AAE810583BD00035C0C7 /* TWSurfaceScanController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWSurfaceScanController.m; sourceTree = "<group>"; };
 		44E7CC6E0F54838700916711 /* RSVerticallyCenteredTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSVerticallyCenteredTextFieldCell.m; sourceTree = "<group>"; };
@@ -73,6 +76,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				44D5A331106AB9760062CB5B /* TWBlockView.h */,
+				44D5A332106AB9760062CB5B /* TWBlockView.m */,
 				44E7CC6E0F54838700916711 /* RSVerticallyCenteredTextFieldCell.m */,
 				44E7CC6F0F54838700916711 /* RSVerticallyCenteredTextFieldCell.h */,
 				44E7CC700F54838700916711 /* TWDevice.h */,
@@ -144,7 +149,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				44354DD80F560B7E0046D4C7 /* ScanWindow.xib */,
+				442D58F1107542C800B05682 /* ScanWindow.xib */,
 				FE5731D20F557C0300DD1E72 /* MacDiskTool.icns */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
@@ -208,7 +213,7 @@
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				44E7CC8D0F54848E00916711 /* MainMenu.xib in Resources */,
 				FE5731D30F557C0300DD1E72 /* MacDiskTool.icns in Resources */,
-				44354DD90F560B7E0046D4C7 /* ScanWindow.xib in Resources */,
+				442D58F2107542C800B05682 /* ScanWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +232,7 @@
 				444B752C1056BA46003AB02B /* TWSurfaceScanOperation.m in Sources */,
 				444B754B1056CD1D003AB02B /* TWReadOnlySurfaceScanOperation.m in Sources */,
 				44E5AAE910583BD00035C0C7 /* TWSurfaceScanController.m in Sources */,
+				44D5A333106AB9760062CB5B /* TWBlockView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +245,14 @@
 				089C165DFE840E0CC02AAC07 /* English */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		442D58F1107542C800B05682 /* ScanWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				44354DD80F560B7E0046D4C7 /* English */,
+			);
+			name = ScanWindow.xib;
 			sourceTree = "<group>";
 		};
 		44E7CC8B0F54848E00916711 /* MainMenu.xib */ = {

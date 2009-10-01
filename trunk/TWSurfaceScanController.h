@@ -16,6 +16,7 @@
 	TWDevice *device;
 	NSOperationQueue *operationQueue;
 	IBOutlet NSProgressIndicator *progressIndicator;
+	IBOutlet NSTextField *progressLabel;
 	TWSurfaceScanOperation *operation;
 }
 
