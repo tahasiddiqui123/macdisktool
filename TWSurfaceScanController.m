@@ -52,8 +52,16 @@
 
 - (void) updateInterface
 {
+	static NSNumberFormatter *percentageFormatter = nil;
+	if (!percentageFormatter) {
+		percentageFormatter = [[NSNumberFormatter alloc] init];
+		[percentageFormatter setNumberStyle:NSNumberFormatterPercentStyle];
+	}
 	TWSurfaceScanOperation *theOperation = self.operation;
-	progressIndicator.doubleValue = (double)theOperation.scannedBlockCount / (double)theOperation.totalBlockCount;
+	double progress = (double)theOperation.scannedBlockCount / (double)theOperation.totalBlockCount;
+	progressIndicator.doubleValue = progress;
+	progressLabel.stringValue = [NSString stringWithFormat:NSLocalizedString(@"Progress: %@", nil),
+														   [percentageFormatter stringFromNumber:[NSNumber numberWithDouble:progress]]];
 }
 
 - (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
