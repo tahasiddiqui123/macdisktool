@@ -9,6 +9,7 @@
 #import "TWSurfaceScanController.h"
 #import "TWSurfaceScanOperation.h"
 #import "TWDevice.h"
+#import "TWTimeIntervalFormatter.h"
 
 
 @implementation TWSurfaceScanController
@@ -43,6 +44,11 @@
 	self.operation = [[[TWSurfaceScanOperation alloc] initSurfaceScanOperationWithDevice:self.device
 																				scanMode:TWReadOnlyScanMode] autorelease];
 	
+	NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:2.0
+													  target:self
+													selector:@selector(sampleProgress:)
+													userInfo:nil
+													 repeats:YES];
 	[self.operation addObserver:self
 					 forKeyPath:@"scannedBlockCount"
 						options:NSKeyValueObservingOptionNew
@@ -50,18 +56,45 @@
 	[self.operationQueue addOperation:self.operation];
 }
 
+- (void) sampleProgress:(NSTimer *)timer
+{
+	blocksPerSecond = (blocksPerSecond * 4 + (self.operation.scannedBlockCount - lastBlockCount)) / 5;
+	lastBlockCount = self.operation.scannedBlockCount;
+}
+
 - (void) updateInterface
 {
 	static NSNumberFormatter *percentageFormatter = nil;
-	if (!percentageFormatter) {
-		percentageFormatter = [[NSNumberFormatter alloc] init];
-		[percentageFormatter setNumberStyle:NSNumberFormatterPercentStyle];
+	static TWTimeIntervalFormatter *timeFormatter = nil;
+	@synchronized(percentageFormatter) {
+		if (!percentageFormatter) {
+			percentageFormatter = [[NSNumberFormatter alloc] init];
+			[percentageFormatter setNumberStyle:NSNumberFormatterPercentStyle];
+		}
+	}
+	@synchronized(timeFormatter) {
+		if (!timeFormatter) {
+			timeFormatter = [[TWTimeIntervalFormatter alloc] init];
+			timeFormatter.accuracy = 2;
+		}
 	}
 	TWSurfaceScanOperation *theOperation = self.operation;
 	double progress = (double)theOperation.scannedBlockCount / (double)theOperation.totalBlockCount;
 	progressIndicator.doubleValue = progress;
-	progressLabel.stringValue = [NSString stringWithFormat:NSLocalizedString(@"Progress: %@", nil),
-														   [percentageFormatter stringFromNumber:[NSNumber numberWithDouble:progress]]];
+	
+	double remainingTime = (theOperation.totalBlockCount - theOperation.scannedBlockCount) / blocksPerSecond;
+	
+	NSString *formattedPercentage = [percentageFormatter stringFromNumber:[NSNumber numberWithDouble:progress]];
+	NSAttributedString *formattedRemainingTime = [timeFormatter attributedStringForObjectValue:[NSNumber numberWithDouble:remainingTime]
+																					withDefaultAttributes:[NSDictionary dictionaryWithObject:[NSColor darkGrayColor]
+																																	  forKey:NSForegroundColorAttributeName]];
+	
+	NSString *progressText = [NSString stringWithFormat:NSLocalizedString(@"Progress: %@  ", nil), formattedPercentage];
+		
+	NSMutableAttributedString *styledStatusText = [[[NSMutableAttributedString alloc] initWithString:progressText] autorelease];
+	[styledStatusText appendAttributedString:formattedRemainingTime];
+	
+	progressLabel.attributedStringValue = styledStatusText;
 }
 
 - (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
