@@ -18,6 +18,8 @@
 	IBOutlet NSProgressIndicator *progressIndicator;
 	IBOutlet NSTextField *progressLabel;
 	TWSurfaceScanOperation *operation;
+	NSInteger blocksPerSecond;
+	UInt64 lastBlockCount;
 }
 
 @property(retain) NSWindowController *windowController;
