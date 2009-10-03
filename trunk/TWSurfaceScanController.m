@@ -95,7 +95,7 @@
 																										   forKey:NSForegroundColorAttributeName]];
 	
 	} else {
-		formattedRemainingTime = NSLocalizedString(@"Computing remaining time…", nil);
+		formattedRemainingTime = [[[NSAttributedString alloc] initWithString:NSLocalizedString(@"Computing remaining time…", nil)] autorelease];
 	}
 	NSMutableAttributedString *styledStatusText = [[[NSMutableAttributedString alloc] initWithString:progressText] autorelease];
 	[styledStatusText appendAttributedString:formattedRemainingTime];
