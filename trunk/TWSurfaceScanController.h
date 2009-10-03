@@ -18,7 +18,7 @@
 	IBOutlet NSProgressIndicator *progressIndicator;
 	IBOutlet NSTextField *progressLabel;
 	TWSurfaceScanOperation *operation;
-	NSInteger blocksPerSecond;
+	NSUInteger blocksPerSecond;
 	UInt64 lastBlockCount;
 }
 
