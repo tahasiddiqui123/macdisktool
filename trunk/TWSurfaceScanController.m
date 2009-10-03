@@ -82,15 +82,21 @@
 	double progress = (double)theOperation.scannedBlockCount / (double)theOperation.totalBlockCount;
 	progressIndicator.doubleValue = progress;
 	
-	double remainingTime = (theOperation.totalBlockCount - theOperation.scannedBlockCount) / blocksPerSecond;
-	
 	NSString *formattedPercentage = [percentageFormatter stringFromNumber:[NSNumber numberWithDouble:progress]];
-	NSAttributedString *formattedRemainingTime = [timeFormatter attributedStringForObjectValue:[NSNumber numberWithDouble:remainingTime]
-																					withDefaultAttributes:[NSDictionary dictionaryWithObject:[NSColor darkGrayColor]
-																																	  forKey:NSForegroundColorAttributeName]];
-	
 	NSString *progressText = [NSString stringWithFormat:NSLocalizedString(@"Progress: %@  ", nil), formattedPercentage];
-		
+	
+	NSAttributedString *formattedRemainingTime;
+	if (blocksPerSecond != 0) {
+		double remainingTime = 0.0;
+		remainingTime = (theOperation.totalBlockCount - theOperation.scannedBlockCount) / blocksPerSecond;
+	
+		formattedRemainingTime = [timeFormatter attributedStringForObjectValue:[NSNumber numberWithDouble:remainingTime]
+														 withDefaultAttributes:[NSDictionary dictionaryWithObject:[NSColor darkGrayColor]
+																										   forKey:NSForegroundColorAttributeName]];
+	
+	} else {
+		formattedRemainingTime = NSLocalizedString(@"Computing remaining time…", nil);
+	}
 	NSMutableAttributedString *styledStatusText = [[[NSMutableAttributedString alloc] initWithString:progressText] autorelease];
 	[styledStatusText appendAttributedString:formattedRemainingTime];
 	
