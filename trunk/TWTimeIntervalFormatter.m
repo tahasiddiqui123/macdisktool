@@ -63,7 +63,7 @@
 	list[3].singularForm = @"1 second";
 	list[3].pluralForm = @"%u seconds";
 	
-	for (NSUInteger i = 0; i < localAccuracy && localAccuracy < 4; i++) {
+	for (NSUInteger i = 0; i < localAccuracy && i < 4; i++) {
 		if (list[i].value == 0 && [components count] == 0) {
 			localAccuracy++;
 		} else if (list[i].value == 1) {
