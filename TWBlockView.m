@@ -44,9 +44,9 @@
 	NSUInteger rows = height / totalSize;
 	NSUInteger columns = width / totalSize;
 	
-	NSAffineTransform *center = [NSAffineTransform transform];
-	[center translateXBy:(width - columns * totalSize) / 2.0 yBy:(height - rows * totalSize) / 2.0];
-	[center concat];
+	//NSAffineTransform *center = [NSAffineTransform transform];
+//	[center translateXBy:(width - columns * totalSize) / 2.0 yBy:(height - rows * totalSize) / 2.0];
+//	[center concat];
 	
 	NSGraphicsContext *context = [NSGraphicsContext currentContext];
 	for (NSUInteger i = 0; i < rows; i++) {
