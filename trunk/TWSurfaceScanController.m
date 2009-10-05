@@ -44,7 +44,7 @@
 	self.operation = [[[TWSurfaceScanOperation alloc] initSurfaceScanOperationWithDevice:self.device
 																				scanMode:TWReadOnlyScanMode] autorelease];
 	
-	NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:2.0
+	NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0
 													  target:self
 													selector:@selector(sampleProgress:)
 													userInfo:nil
