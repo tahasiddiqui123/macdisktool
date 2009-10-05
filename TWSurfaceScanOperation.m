@@ -27,6 +27,10 @@
 @synthesize totalBlockCount;
 
 - (id)initSurfaceScanOperationWithDevice:(TWDevice *)theDevice scanMode:(TWSurfaceScanMode)scanMode {
+	// working around bug
+	// http://stackoverflow.com/questions/1516905/
+	// rdar://7274868
+	self = [super init];
 	[self release];
 	
 	Class newClass = Nil;
