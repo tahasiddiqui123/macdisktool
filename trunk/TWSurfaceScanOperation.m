@@ -54,6 +54,7 @@
 	const UInt64 scanAtOnce = 64;
 	
 	while (currentBlock < blockCount) {
+		NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 		if (![self scanBlocksFrom:currentBlock count:scanAtOnce error:nil]) {
 			// Error! Loop over every block individually.
 			for (UInt64 i = 0; i < scanAtOnce; i++) {
@@ -67,10 +68,11 @@
 		}
 		currentBlock += scanAtOnce;
 		self.scannedBlockCount = currentBlock;
+		[pool drain];
 	}
 	
 	close(self.fileDescriptor);
-	[pool release];
+	[pool drain];
 }
 
 - (int)getAuthorizedFileHandle {
