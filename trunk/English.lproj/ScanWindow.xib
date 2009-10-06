@@ -8,7 +8,7 @@
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="1" id="9"/>
+			<integer value="2"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -234,7 +234,7 @@
 										<object class="NSCustomView" id="1011793005">
 											<reference key="NSNextResponder" ref="241041121"/>
 											<int key="NSvFlags">274</int>
-											<string key="NSFrameSize">{535, 261}</string>
+											<string key="NSFrame">{{18, 14}, {503, 239}}</string>
 											<reference key="NSSuperview" ref="241041121"/>
 											<string key="NSClassName">TWBlockView</string>
 										</object>
@@ -568,10 +568,10 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{230, 164}, {575, 422}}</string>
+					<string>{{325, 164}, {575, 422}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{230, 164}, {575, 422}}</string>
-					<reference ref="9"/>
+					<string>{{325, 164}, {575, 422}}</string>
+					<integer value="1"/>
 					<string>{196, 240}</string>
 					<string>{{357, 418}, {480, 270}}</string>
 					<boolean value="NO" id="6"/>
