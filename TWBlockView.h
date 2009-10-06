@@ -15,6 +15,5 @@
 
 - (id) initWithFrame:(NSRect)frame;
 - (void) drawRect:(NSRect)rect;
-- (BOOL) isFlipped;
 
 @end
