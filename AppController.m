@@ -19,6 +19,7 @@
 #include <IOKit/IOBSD.h>
 #include <IOKit/storage/IOMedia.h>
 #include <CoreFoundation/CoreFoundation.h>
+#include <IOKit/Kext/KextManager.h>
 
 #import "TWDevice.h"
 #import "TWStorageSizeFormatter.h"
@@ -98,7 +99,20 @@
 
 			NSString *bundleIdentifier = [properties valueForKeyPath:@"IOMediaIcon.CFBundleIdentifier"];
 			NSString *resourceFile = [properties valueForKeyPath:@"IOMediaIcon.IOBundleResourceFile"];
-			NSBundle *bundleWithIcon = [self bundleWithKnownIdentifier:bundleIdentifier];
+			/* see http://lists.apple.com/archives/darwin-dev/2009/Oct/msg00088.html
+			 * for the documentation of KextManagerCreateURLForBundleIdentifier
+			 */
+			NSURL *bundleURL = (NSURL *)KextManagerCreateURLForBundleIdentifier(NULL, (CFStringRef)bundleIdentifier);
+			NSBundle *bundleWithIcon;
+			// bundleWithURL is only available on >= MAC OS X 10.6
+			if ([NSBundle respondsToSelector:@selector(bundleWithURL:)]) {
+				bundleWithIcon = [NSBundle bundleWithURL:bundleURL];
+			} else {
+				bundleWithIcon = [NSBundle bundleWithPath:[bundleURL path]];
+			}
+			if (bundleURL) {
+				CFRelease(bundleURL);
+			}
 			NSString *iconPath = [bundleWithIcon pathForResource:resourceFile ofType:nil];
 			
 			NSImage *icon = [[[NSImage alloc] initWithContentsOfFile:iconPath] autorelease];
@@ -115,18 +129,6 @@
 	IOObjectRelease(mediaIterator);
 	
 	self.storageDevices = detectedDevices;
-}
-
-- (NSBundle *)bundleWithKnownIdentifier:(NSString *)identifier {
-	static NSDictionary *dict = nil;
-	if (dict == nil) {
-		dict = [NSDictionary dictionaryWithObjectsAndKeys:
-							@"/System/Library/Extensions/IOStorageFamily.kext", @"com.apple.iokit.IOStorageFamily",
-							@"/System/Library/Extensions/IOCDStorageFamily.kext", @"com.apple.iokit.IOCDStorageFamily",
-							nil];
-	}
-	
-	return [NSBundle bundleWithPath:[dict valueForKey:identifier]];
 }
 
 - (IBAction)scan:(id)sender {

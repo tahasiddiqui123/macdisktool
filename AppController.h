@@ -24,8 +24,6 @@
 - (void)awakeFromNib;
 - (void)populateStorageDevices;
 
-- (NSBundle *)bundleWithKnownIdentifier:(NSString *)identifier;
-
 - (IBAction)scan:(id)sender;
 
 @end
