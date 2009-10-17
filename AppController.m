@@ -103,22 +103,23 @@
 			 * for the documentation of KextManagerCreateURLForBundleIdentifier
 			 */
 			NSURL *bundleURL = (NSURL *)KextManagerCreateURLForBundleIdentifier(NULL, (CFStringRef)bundleIdentifier);
-			NSBundle *bundleWithIcon;
-			// bundleWithURL is only available on >= MAC OS X 10.6
-			if ([NSBundle respondsToSelector:@selector(bundleWithURL:)]) {
-				bundleWithIcon = [NSBundle bundleWithURL:bundleURL];
-			} else {
-				bundleWithIcon = [NSBundle bundleWithPath:[bundleURL path]];
-			}
 			if (bundleURL) {
+				NSBundle *bundleWithIcon;
+				// bundleWithURL is only available on >= MAC OS X 10.6
+				if ([NSBundle respondsToSelector:@selector(bundleWithURL:)]) {
+					bundleWithIcon = [NSBundle bundleWithURL:bundleURL];
+				} else {
+					bundleWithIcon = [NSBundle bundleWithPath:[bundleURL path]];
+				}
+				
+				NSString *iconPath = [bundleWithIcon pathForResource:resourceFile ofType:nil];
+				
+				NSImage *icon = [[[NSImage alloc] initWithContentsOfFile:iconPath] autorelease];
+				[icon setSize:NSMakeSize(32.0, 32.0)];
+				device.icon = icon;
+				
 				CFRelease(bundleURL);
 			}
-			NSString *iconPath = [bundleWithIcon pathForResource:resourceFile ofType:nil];
-			
-			NSImage *icon = [[[NSImage alloc] initWithContentsOfFile:iconPath] autorelease];
-			[icon setSize:NSMakeSize(32.0, 32.0)];
-			device.icon = icon;
-			
 			[detectedDevices addObject:device];
 		}
 		
