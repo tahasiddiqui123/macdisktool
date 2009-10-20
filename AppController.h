@@ -22,7 +22,6 @@
 - (id)init;
 - (void)dealloc;
 - (void)awakeFromNib;
-- (void)populateStorageDevices;
 
 - (IBAction)scan:(id)sender;
 

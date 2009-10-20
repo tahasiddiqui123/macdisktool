@@ -25,4 +25,6 @@
 @property BOOL writable;
 @property(retain) NSImage *icon;
 
++ (NSArray *)allDevices;
+
 @end
