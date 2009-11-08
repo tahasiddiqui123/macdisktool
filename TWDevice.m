@@ -60,7 +60,8 @@
 		}
 		
 		// is it a whole device or just a partition?
-		if ([[properties valueForKey:@"Whole"] isEqualToNumber:[NSNumber numberWithBool:YES]]) {
+		if ([[properties valueForKey:@"Whole"] boolValue] &&
+			![[properties valueForKey:@"RAID"] boolValue]) {
 			TWDevice *device = [[[TWDevice alloc] init] autorelease];
 			
 			device.devicePath = [NSString stringWithFormat:@"%sr%@", _PATH_DEV, [properties valueForKey:@"BSD Name"]];
