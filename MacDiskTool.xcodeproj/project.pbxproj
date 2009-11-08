@@ -7,12 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44097175107E142000043EE2 /* tool_main.c in Sources */ = {isa = PBXBuildFile; fileRef = 440970E9107B94AE00043EE2 /* tool_main.c */; };
+		44097176107E142000043EE2 /* macdisktool.c in Sources */ = {isa = PBXBuildFile; fileRef = 44097169107DEC2A00043EE2 /* macdisktool.c */; };
+		44097177107E142000043EE2 /* server.c in Sources */ = {isa = PBXBuildFile; fileRef = 440970EA107B94AE00043EE2 /* server.c */; };
+		44097178107E142500043EE2 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 440970A2107B742900043EE2 /* Security.framework */; };
+		44097213107E563700043EE2 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44352A55106253CE00EA346F /* CoreFoundation.framework */; };
 		442D58F2107542C800B05682 /* ScanWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 442D58F1107542C800B05682 /* ScanWindow.xib */; };
 		442D593A1075FD9400B05682 /* TWTimeIntervalFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 442D59391075FD9400B05682 /* TWTimeIntervalFormatter.m */; };
 		444B752C1056BA46003AB02B /* TWSurfaceScanOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 444B752B1056BA46003AB02B /* TWSurfaceScanOperation.m */; };
 		444B754B1056CD1D003AB02B /* TWReadOnlySurfaceScanOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 444B754A1056CD1D003AB02B /* TWReadOnlySurfaceScanOperation.m */; };
 		44A038EF0F6E9EF400974860 /* SecurityFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44A038EE0F6E9EF400974860 /* SecurityFoundation.framework */; };
 		44D5A333106AB9760062CB5B /* TWBlockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D5A332106AB9760062CB5B /* TWBlockView.m */; };
+		44DCBD821099916E0074FACA /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44E7CC890F54842E00916711 /* IOKit.framework */; };
 		44E5AAE910583BD00035C0C7 /* TWSurfaceScanController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44E5AAE810583BD00035C0C7 /* TWSurfaceScanController.m */; };
 		44E7CC760F54838700916711 /* RSVerticallyCenteredTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44E7CC6E0F54838700916711 /* RSVerticallyCenteredTextFieldCell.m */; };
 		44E7CC770F54838700916711 /* TWDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 44E7CC710F54838700916711 /* TWDevice.m */; };
@@ -26,6 +32,16 @@
 		FE5731D30F557C0300DD1E72 /* MacDiskTool.icns in Resources */ = {isa = PBXBuildFile; fileRef = FE5731D20F557C0300DD1E72 /* MacDiskTool.icns */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		441F2FC7108A6FB8009AD2D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4409716F107E13F100043EE2;
+			remoteInfo = macdisktool;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
@@ -34,6 +50,14 @@
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* MacDiskTool_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacDiskTool_Prefix.pch; sourceTree = "<group>"; };
+		440970A2107B742900043EE2 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		440970E8107B94AE00043EE2 /* ch.troubleware.MacDiskToolHelper.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ch.troubleware.MacDiskToolHelper.plist; sourceTree = "<group>"; };
+		440970E9107B94AE00043EE2 /* tool_main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tool_main.c; sourceTree = "<group>"; };
+		440970EA107B94AE00043EE2 /* server.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = server.c; sourceTree = "<group>"; };
+		440970EB107B94AE00043EE2 /* server.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = server.h; sourceTree = "<group>"; };
+		44097168107DEC2A00043EE2 /* macdisktool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = macdisktool.h; sourceTree = "<group>"; };
+		44097169107DEC2A00043EE2 /* macdisktool.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = macdisktool.c; sourceTree = "<group>"; };
+		44097170107E13F100043EE2 /* macdisktool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = macdisktool; sourceTree = BUILT_PRODUCTS_DIR; };
 		442D59381075FD9400B05682 /* TWTimeIntervalFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWTimeIntervalFormatter.h; sourceTree = "<group>"; };
 		442D59391075FD9400B05682 /* TWTimeIntervalFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWTimeIntervalFormatter.m; sourceTree = "<group>"; };
 		44352A55106253CE00EA346F /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = /System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<absolute>"; };
@@ -63,6 +87,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4409716E107E13F100043EE2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44DCBD821099916E0074FACA /* IOKit.framework in Frameworks */,
+				44097213107E563700043EE2 /* CoreFoundation.framework in Frameworks */,
+				44097178107E142500043EE2 /* Security.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8D11072E0486CEB800E47090 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -104,6 +138,7 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				440970A2107B742900043EE2 /* Security.framework */,
 				44352A55106253CE00EA346F /* CoreFoundation.framework */,
 				44A038EE0F6E9EF400974860 /* SecurityFoundation.framework */,
 				44E7CC890F54842E00916711 /* IOKit.framework */,
@@ -126,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				8D1107320486CEB800E47090 /* MacDiskTool.app */,
+				44097170107E13F100043EE2 /* macdisktool */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -133,6 +169,7 @@
 		29B97314FDCFA39411CA2CEA /* MacDiskTool */ = {
 			isa = PBXGroup;
 			children = (
+				440970E7107B94AE00043EE2 /* tool */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -172,9 +209,38 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		440970E7107B94AE00043EE2 /* tool */ = {
+			isa = PBXGroup;
+			children = (
+				440970E8107B94AE00043EE2 /* ch.troubleware.MacDiskToolHelper.plist */,
+				440970E9107B94AE00043EE2 /* tool_main.c */,
+				44097168107DEC2A00043EE2 /* macdisktool.h */,
+				44097169107DEC2A00043EE2 /* macdisktool.c */,
+				440970EB107B94AE00043EE2 /* server.h */,
+				440970EA107B94AE00043EE2 /* server.c */,
+			);
+			path = tool;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4409716F107E13F100043EE2 /* macdisktool */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 44097174107E141A00043EE2 /* Build configuration list for PBXNativeTarget "macdisktool" */;
+			buildPhases = (
+				4409716D107E13F100043EE2 /* Sources */,
+				4409716E107E13F100043EE2 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = macdisktool;
+			productName = macdisktool;
+			productReference = 44097170107E13F100043EE2 /* macdisktool */;
+			productType = "com.apple.product-type.tool";
+		};
 		8D1107260486CEB800E47090 /* MacDiskTool */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "MacDiskTool" */;
@@ -186,6 +252,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				441F2FC8108A6FB8009AD2D3 /* PBXTargetDependency */,
 			);
 			name = MacDiskTool;
 			productInstallPath = "$(HOME)/Applications";
@@ -206,6 +273,7 @@
 			projectRoot = "";
 			targets = (
 				8D1107260486CEB800E47090 /* MacDiskTool */,
+				4409716F107E13F100043EE2 /* macdisktool */,
 			);
 		};
 /* End PBXProject section */
@@ -225,6 +293,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4409716D107E13F100043EE2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44097175107E142000043EE2 /* tool_main.c in Sources */,
+				44097176107E142000043EE2 /* macdisktool.c in Sources */,
+				44097177107E142000043EE2 /* server.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8D11072C0486CEB800E47090 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -243,6 +321,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		441F2FC8108A6FB8009AD2D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4409716F107E13F100043EE2 /* macdisktool */;
+			targetProxy = 441F2FC7108A6FB8009AD2D3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
@@ -272,6 +358,36 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		44097172107E13F600043EE2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INSTALL_PATH = /usr/local/bin;
+				PREBINDING = NO;
+				PRODUCT_NAME = macdisktool;
+			};
+			name = Debug;
+		};
+		44097173107E13F600043EE2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/bin;
+				PREBINDING = NO;
+				PRODUCT_NAME = macdisktool;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 		C01FCF4B08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -332,6 +448,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		44097174107E141A00043EE2 /* Build configuration list for PBXNativeTarget "macdisktool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44097172107E13F600043EE2 /* Debug */,
+				44097173107E13F600043EE2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "MacDiskTool" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

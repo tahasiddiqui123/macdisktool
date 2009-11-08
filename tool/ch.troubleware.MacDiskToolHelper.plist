@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>MacDiskToolHelper</string>
+	<key>KeepAlive</key>
+	<false/>
+	<key>UserName</key>
+	<string>root</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/Library/PrivilegedHelperTools/macdisktool</string>
+		<string>--server</string>
+	</array>
+	<key>Sockets</key>
+	<dict>
+		<key>IPC</key>
+		<dict>
+			<key>SockPathName</key>
+			<string>/tmp/MacDiskToolHelper</string>
+			<key>SockPathMode</key>
+			<integer>511</integer>
+		</dict>
+	</dict>
+</dict>
+</plist>
